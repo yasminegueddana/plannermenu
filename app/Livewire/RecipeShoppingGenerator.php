@@ -137,17 +137,12 @@ class RecipeShoppingGenerator extends Component
 
         $totalItems = count($this->ingredientsList);
         $purchasedItems = collect($this->ingredientsList)->where('is_purchased', true)->count();
-        $totalCost = collect($this->ingredientsList)->sum('estimated_cost');
-        $purchasedCost = collect($this->ingredientsList)->where('is_purchased', true)->sum('estimated_cost');
-        $remainingCost = $totalCost - $purchasedCost;
 
         return [
             'total_items' => $totalItems,
             'purchased_items' => $purchasedItems,
             'remaining_items' => $totalItems - $purchasedItems,
-            'total_cost' => $totalCost,
-            'purchased_cost' => $purchasedCost,
-            'remaining_cost' => $remainingCost,
+
             'completion_percentage' => $totalItems > 0 ? round(($purchasedItems / $totalItems) * 100, 1) : 0,
         ];
     }
@@ -183,7 +178,6 @@ class RecipeShoppingGenerator extends Component
             $ingredientsData = [];
             foreach ($this->ingredientsList as $ingredient) {
                 $ingredientsData[$ingredient['id']] = [
-                    'estimated_cost' => $ingredient['estimated_cost'],
                     'is_purchased' => $ingredient['is_purchased'],
                 ];
             }
