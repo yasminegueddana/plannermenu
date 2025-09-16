@@ -4,7 +4,7 @@ Menu Planner est une application web développée avec Laravel permettant de gé
 
 ## Fonctionnalités
 
-- Tableau de bord avec indicateurs et graphiques (Chart.js)
+- Tableau de bord avec indicateurs et graphiques
 - Gestion des ingrédients
 - Gestion des recettes
 - Création et planification de menus
