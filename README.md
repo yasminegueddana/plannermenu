@@ -1,61 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Menu Planner
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Menu Planner est une application web développée avec Laravel permettant de gérer des menus, des recettes, des ingrédients et des listes de courses. Elle propose un tableau de bord interactif avec des statistiques et graphiques pour faciliter l’organisation des repas.
 
-## About Laravel
+## Fonctionnalités
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Tableau de bord avec indicateurs et graphiques (Chart.js)
+- Gestion des ingrédients
+- Gestion des recettes
+- Création et planification de menus
+- Génération automatique de listes de courses
+- Export PDF des listes de courses
+- Gestion des utilisateurs et rôles (admin, user)
+- Authentification sécurisée
+- Interface moderne avec Tailwind CSS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prérequis
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 8.1
+- Composer
+- Node.js & npm
+- MySQL ou MariaDB
+- Docker (optionnel, pour un déploiement rapide)
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Cloner le dépôt**
+   ```bash
+   git clone https://github.com/votre-utilisateur/menu-planner.git
+   cd menu-planner
+   ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. **Installer les dépendances PHP**
+   ```bash
+   composer install
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Installer les dépendances JS**
+   ```bash
+   npm install
+   ```
 
-## Laravel Sponsors
+4. **Copier le fichier d’environnement**
+   ```bash
+   cp .env.example .env
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+5. **Configurer la base de données dans `.env`**
 
-### Premium Partners
+6. **Générer la clé d’application**
+   ```bash
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+7. **Lancer les migrations**
+   ```bash
+   php artisan migrate
+   ```
 
-## Contributing
+8. **Compiler les assets**
+   ```bash
+   npm run dev
+   ```
+   Pour la production :
+   ```bash
+   npm run build
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+9. **Lancer le serveur**
+   ```bash
+   php artisan serve
+   ```
 
-## Code of Conduct
+10. *(Optionnel)* **Utiliser Docker**
+    ```bash
+    docker-compose up --build
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Utilisation
 
-## Security Vulnerabilities
+- Accédez à l’application sur [http://localhost:8000](http://localhost:8000)
+- Inscrivez-vous ou connectez-vous pour accéder à toutes les fonctionnalités
+- Naviguez via le menu pour gérer les ingrédients, recettes, menus et listes de courses
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Structure du projet
 
-## License
+- `app/` : logique métier, Livewire, contrôleurs, modèles
+- `resources/views/` : vues Blade, composants, layouts
+- `resources/js/` : scripts JS (dashboard, etc.)
+- `resources/css/` : styles Tailwind CSS
+- `routes/` : routes web et API
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Contribution
+
+Les contributions sont les bienvenues !  
+Forkez le projet, créez une branche et proposez une pull request.
+
+## Licence
+
+Ce projet est sous licence MIT.
+
+---
+
+**Développé avec Laravel, Livewire, Tailwind CSS et Chart.js.**
