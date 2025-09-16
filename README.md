@@ -18,8 +18,7 @@ Menu Planner est une application web développée avec Laravel permettant de gé
 
 - PHP >= 8.1
 - Composer
-- Node.js & npm
-- MySQL ou MariaDB
+- MySQL
 - Docker (optionnel, pour un déploiement rapide)
 
 ## Installation
